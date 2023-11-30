@@ -1,0 +1,53 @@
+.filter-sort{
+    /* border: 1px solid; */
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    text-align: left;
+    margin-top: 3%
+    /* padding: 10px; */
+}
+.filter{
+/* border: 1px solid; */
+display: flex;
+gap: 50px;
+margin-left: 17%;
+}
+.sort{
+    border: 1px solid;
+    margin-left: 5%;
+    
+}
+Button{
+    background-color: yellow;
+}
+.movie-box{
+    /* border: 1px solid; */
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    gap: 20px;
+}
+.main-Box{
+    /* border: 1px solid; */
+    border-radius: 10px;
+    height: 550px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.img-Box{
+    width: 100%;
+   
+    /* border: 1px solid; */
+    /* height: 400px; */
+}
+
+.pagination{
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

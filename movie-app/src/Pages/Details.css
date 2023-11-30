@@ -1,0 +1,27 @@
+.detail-Box{
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    margin: 5% auto;
+}
+.detail-Box2{
+    /* border: 1px solid green; */
+    text-align: left;
+    /* width: 70%; */
+}
+.mini-details{
+    /* border: 1px solid red; */
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 20px;
+    align-items: center;
+}
+
+.last-button{
+    /* border: 1px solid; */
+    width: max-content;
+    display: flex;
+    padding: 30px 0px;
+    gap: 20px;
+}
