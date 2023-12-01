@@ -14,7 +14,7 @@ export const Home = () => {
   useEffect(() => {
     let url = "https://www.omdbapi.com/?apikey=b72d4412&s=all";
 
-    //  sorting || btn ||
+   
     if (sorting) {
       url += `&type=${sorting}`;
     }
