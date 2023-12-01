@@ -73,7 +73,7 @@ const Footer = () => {
         <Box >
           <p>
             Copyright © 2022. All Rights Reserved By{' '}
-            <span style={{ color: '#e3d804' }}>Movifix</span>
+            <span style={{ color: '#e3d804' }}>Movie</span>
           </p>
         </Box>
         <Box  mt={['10px','0px']}>

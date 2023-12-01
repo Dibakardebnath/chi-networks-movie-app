@@ -50,7 +50,15 @@
   .single-Li li{
     list-style: none;
   }
-  
+  .single-Li li a{
+    list-style: none;
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+  }
   nav ul li a{
     display: block;
     text-decoration: none;
@@ -155,7 +163,7 @@
       background-color: transparent;
   
     }
-    .logoutBtn{
+    /* .logoutBtn{
      
       margin: -10px auto;
       gap: 5px;
@@ -168,7 +176,7 @@
       background-color: teal;
       color: white;
     
-    }
+    } */
   
   }
   

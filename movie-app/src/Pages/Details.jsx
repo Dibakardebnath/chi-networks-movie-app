@@ -66,7 +66,7 @@ export const Details = () => {
             <Text>
               <i class="fa-solid fa-calendar-days"></i>&nbsp;{state.Year}
             </Text>
-            <Text>{state.Runtime}</Text>
+            <Text><i class="fa-solid fa-clock"></i>&nbsp;{state.Runtime}</Text>
             <Text>Rating: {state.imdbRating}</Text>
           </Box>
 
