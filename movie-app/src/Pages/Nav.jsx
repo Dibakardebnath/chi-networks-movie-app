@@ -1,17 +1,31 @@
 import React, { useState } from "react";
-import { Box, Button, Heading, Icon, Image, Input, VStack, useDisclosure } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Heading,
+  Icon,
+  Image,
+  Input,
+  VStack,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { FaToriiGate, FaUser, FaSignOutAlt, FaFontAwesome } from 'react-icons/fa'; // Import the icons
+import {
+  FaToriiGate,
+  FaUser,
+  FaSignOutAlt,
+  FaFontAwesome,
+} from "react-icons/fa"; // Import the icons
 import "./Nav.css";
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 import { GetSearchVal } from "../Redux/Action";
 
 export const Nav = () => {
-  const dispath=useDispatch()
-  const [inpVal,setInputVal]=useState("");
+  const dispath = useDispatch();
+  const [inpVal, setInputVal] = useState("");
   const navigate = useNavigate();
   const name = JSON.parse(localStorage.getItem("logged"));
-  const username = name ? name.split('@')[0] : null;
+  const username = name ? name.split("@")[0] : null;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleLogoClick = () => {
     navigate("/");
@@ -27,26 +41,24 @@ export const Nav = () => {
   };
 
   const handleButtonClick = () => {
-    dispath(GetSearchVal(inpVal))
+    dispath(GetSearchVal(inpVal));
   };
-
 
   return (
     <Box
       as="nav"
       bg="#292B2C"
       color="white"
-      p={['2', '4']}
+      p={["2", "4"]}
       display={["flex", "flex"]}
       justifyContent="space-between"
       alignItems="center"
     >
-
       <Box
         className="logo"
         onClick={handleLogoClick}
         alignItems="center"
-        display={['none', 'flex']}
+        display={["none", "flex"]}
       >
         <Image
           borderRadius="full"
@@ -59,9 +71,15 @@ export const Nav = () => {
         </Heading>
       </Box>
       <Box display={["none", "flex"]}>
-        <ul style={{ listStyleType: "none", display: "flex", alignItems: "center" }}>
+        <ul
+          style={{
+            listStyleType: "none",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
           <li>
-            <NavLink  to={"/"} className="link" mx={2}>
+            <NavLink to={"/"} className="link" mx={2}>
               Home
             </NavLink>
           </li>
@@ -71,31 +89,39 @@ export const Nav = () => {
             </NavLink>
           </li>
           <li>
-            <Input value={inpVal} 
-               onChange={handleInputChange} type="text" id="searchInput" placeholder="Search..." />
-          </li>&nbsp;
+            <Input
+              value={inpVal}
+              onChange={handleInputChange}
+              type="text"
+              id="searchInput"
+              placeholder="Search..."
+            />
+          </li>
+          &nbsp;
           <li>
-            <Button bg="yellow.300"  onClick={handleButtonClick}>Search</Button>
+            <Button bg="yellow.300" onClick={handleButtonClick}>
+              Search
+            </Button>
           </li>
         </ul>
       </Box>
       <Button
-        display={{ base: 'block', md: 'none' }}
+        display={{ base: "block", md: "none" }}
         onClick={isOpen ? onClose : onOpen}
         ml={3}
-        id='mob_menue_nav'
+        id="mob_menue_nav"
         variant="outline"
         backgroundColor="yellow.300"
-        color={'black'}
+        color={"black"}
       >
         Menu
       </Button>
       <Box className="single-Li" display={["none", "flex"]}>
         {name ? (
           <li>
-            <Button variant="link" color={'white'} onClick={handleLogout}>
-              <Icon as={FaSignOutAlt} />  Logout
-              &nbsp; <Box
+            <Button variant="link" color={"white"} onClick={handleLogout}>
+              <Icon as={FaSignOutAlt} /> Logout &nbsp;{" "}
+              <Box
                 display={{ base: "none", md: "block" }}
                 ml={1}
                 fontWeight="bold"
@@ -116,28 +142,50 @@ export const Nav = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <Box id="mob_nav" color={'white'} mt={4}>
-
-
-          <VStack overflow={'auto'} alignItems="center">
-            <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} to="/">
+        <Box id="mob_nav" color={"white"} mt={4}>
+          <VStack overflow={"auto"} alignItems="center">
+            <Box
+              as={Link}
+              id="nav_li"
+              color="black"
+              fontSize={"large"}
+              fontWeight={"600"}
+              to="/"
+            >
               Home
             </Box>
-            <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} to="/favourite">
+            <Box
+              as={Link}
+              id="nav_li"
+              color="black"
+              fontSize={"large"}
+              fontWeight={"600"}
+              to="/favourite"
+            >
               Favourite
             </Box>
-            <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} to="/register">
+            <Box
+              as={Link}
+              id="nav_li"
+              color="black"
+              fontSize={"large"}
+              fontWeight={"600"}
+              to="/register"
+            >
               Register
             </Box>
 
             {name && (
               <Box>
-                <Button variant="link" id="nav_li" color='white' onClick={handleLogout}>
-                  <Icon as={FaSignOutAlt} ml={2} />  Logout
+                <Button
+                  variant="link"
+                  id="nav_li"
+                  color="white"
+                  onClick={handleLogout}
+                >
+                  <Icon as={FaSignOutAlt} ml={2} /> Logout
                 </Button>
-                <Box mt={"10px"}>
-                  {username}
-                </Box>
+                <Box mt={"10px"}>{username}</Box>
               </Box>
             )}
           </VStack>
