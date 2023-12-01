@@ -1,28 +1,46 @@
-.mainBox{
+.mainBox {
     padding: 5px;
-     width: 35%;
-      margin: 100px auto;
-      border-radius: 10px;
-       border-color: teal;
+    width: 35%;
+    margin: 10% auto;
+    border-radius: 10px;
+    border-color: teal;
 }
 
-@media (max-width:720px){
+#nav_li {
+    overflow: hidden;
+    color: white;
+    transform: translateY(0);
+    /* Initial state for smooth transition */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition */
+}
 
-    .mainBox{
+#nav_li:hover {
+    background-color: #03698e;
+    border-radius: 10px;
+    padding: 3px 5px;
+    transform: translateY(-3px);
+    /* Apply a vertical translation on hover */
+}
+
+
+@media (max-width:720px) {
+
+    .mainBox {
         padding: 5px;
-         width: 80%;
-          margin: 100px auto;
-          border-radius: 10px;
-           border-color: teal;
+        width: 80%;
+        margin: 100px auto;
+        border-radius: 10px;
+        border-color: teal;
     }
 }
 
-    @media (min-width: 721px) and (max-width: 1024px){
-        .mainBox{
-            padding: 5px;
-             width: 60%;
-              margin: 100px auto;
-              border-radius: 10px;
-               border-color: teal;
-        }
+@media (min-width: 721px) and (max-width: 1024px) {
+    .mainBox {
+        padding: 5px;
+        width: 60%;
+        margin: 100px auto;
+        border-radius: 10px;
+        border-color: teal;
     }
+}

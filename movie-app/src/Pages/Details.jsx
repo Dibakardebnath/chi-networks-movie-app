@@ -7,7 +7,7 @@ import axios from "axios";
 export const Details = () => {
   const { id } = useParams();
   const [state, setState] = useState("");
-  console.log(id);
+  // console.log(id);
   useEffect(() => {
     let url = `https://www.omdbapi.com/?apikey=eac592da&i=${id}`;
 
@@ -19,7 +19,7 @@ export const Details = () => {
       .get(url)
       .then((resp) => {
         setState(resp.data);
-        console.log(resp.data);
+        // console.log(resp.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -36,7 +36,6 @@ export const Details = () => {
 
   return (
     <Box
-      border={"1px solid"}
       mt={"100px"}
       backgroundColor={"#181d23"}
       color={"white"}
